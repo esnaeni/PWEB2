@@ -459,6 +459,185 @@ Tampilkan Data: Metode tampilkanData() dipanggil untuk menampilkan informasi mah
           echo $dosen1->tampilkanDosen();
       ?>
 
-# JOBSHEET 2 (Modul Prfaktikum Pemrograman Web II-Pertemuan 1-2)
+# JOBSHEET 2 (Modul Prfaktikum Pemrograman Web II-Pertemuan 3-4)
 <h3>1. Membuat Class dan Object</h3>
    <h6>a. Mendefinisikan class</h6>
+
+         class Mahasiswa{
+            ....
+         }
+         
+   <p>
+      class Mahasiswa{...} mendefinisikan sebuah class dengan nama Mahasiswa. Class adalah templat atau blue screen untuk membuat objek. Dalam hal ini, Mahasiswa adalah class yang menggambarkan seorang mahasiswa.
+   </p>
+
+   <h6>b. </h6>
+
+         public $nama;
+         public $nim;
+         public $jurusan;
+   
+   <p>
+      Properti atau atribut ini digunakan untuk menyimpan informasi tentang objek Mahasiswa. Kata kunci <b>public</b> bererti properti ini dapat diakses dari luar class.
+   </p>
+
+   <h6>c. </h6>
+
+        public function __construct($nama, $nim, $jurusan){
+            $this->nama = $nama;
+            $this->nim = $nim;
+            $this->jurusan = $jurusan;
+         }
+   
+   <p>
+      Constructor adalah metode khusus yang dijalankan secara otomatis ketika objek dari class dibuat. Dalam metode ini, atribut nama, nim, dan jurusan diinisialisasi dengan nilai yang diberikan saat objek dibuat.
+   </p>
+
+   <h6>d. </h6>
+
+          public function tampilkanData(){
+            return "Nama: $this->nama, NIM: $this->nim, Jurusan: $this->jurusan";
+         }
+   
+   <p>
+      Metode ini adalah fungsi yang dapat dipanggil pada objek Mahasiswa. Metode tampilkanData() mengembalikan string yang berisi informasi tentang nama, NIM, dan jurusan mahasiswa.
+   </p>
+
+   <h6>e. </h6>
+
+         $mahasiswa1 = new Mahasiswa("Didik Wicaksono", "240102008", "Komputer dan Bisnis");
+   
+   <p>
+      Baris ini membuat objek baru dari class Mahasiswa dengan nama mahasiswa1. Ketika objek ini dibuat, constructor dipanggil dengan parameter yang diberikan ("Didik Wicaksono", "240102008", "Komputer dan Bisnis"), yang mengisi atribut objek tersebut.
+   </p>
+
+   <h6>f. </h6>
+
+         echo $mahasiswa1->tampilkanData();
+   
+   <p>
+      Baris ini memanggil metode tampilkanData() dari objek mahasiswa1 dan mencetak hasilnya. Output yang dihasilkan adalah string yang mencakup informasi nama, NIM, dan jurusan mahasiswa.
+   </p>
+
+<h3>2. Encapsulation</h3>
+   <h6>a. Mendefinisikan class Mahasiswa</h6>
+
+         // Mendefinisikan kelas Mahasiswa dengan atribut private untuk enkapsulasi data
+         class Mahasiswa {
+         private $nama;       // Atribut private untuk menyimpan nama mahasiswa
+         private $nim;        // Atribut private untuk menyimpan NIM mahasiswa
+         private $jurusan;    // Atribut private untuk menyimpan jurusan mahasiswa
+   
+   <p>
+      Kelas Mahasiswa memiliki tiga properti publik: $nama, $nim, dan $jurusan. Properti ini digunakan untuk menyimpan data mahasiswa. Properti yang digunakan bersifat private yang artinya hanya bisa diakses dari dalam class Mahasiswa. Ini adalah praktik encapsulation yang menyembunyikan data internal dari akses langsung luar class.
+   </p>
+
+   <h6>b. Constructor menggunakan __construct</h6>
+
+         // Constructor untuk menginisialisasi objek Mahasiswa dengan nilai nama, nim, dan jurusan
+        public function __construct($nama, $nim, $jurusan) {
+            $this->nama = $nama;         // Menginisialisasi atribut nama
+            $this->nim = $nim;           // Menginisialisasi atribut NIM
+            $this->jurusan = $jurusan;   // Menginisialisasi atribut jurusan
+        }
+   
+   <p>
+      Constructor ini adalah metode khusus yang otomatis dipanggil saat objek Mahasiswa dibuat. Ini digunakan untuk menginisialisasi atribut nama, nim, dan jurusan dengan nilai yang diberikan saat objek dibuat.
+   </p>
+
+   <h6>c. Penggunaan getter dan setter</h6>
+
+         public function getNama() {
+            return $this->nama;   // Mengembalikan nilai atribut nama
+        }
+
+        // Getter untuk mendapatkan nilai NIM mahasiswa
+        public function getNim() {
+            return $this->nim;    // Mengembalikan nilai atribut NIM
+        }
+
+        // Getter untuk mendapatkan nilai jurusan mahasiswa
+        public function getJurusan() {
+            return $this->jurusan;   // Mengembalikan nilai atribut jurusan
+        }
+
+        // Setter untuk mengubah nilai nama mahasiswa
+        public function setNama($nama) {
+            $this->nama = $nama;   // Mengubah nilai atribut nama
+        }
+
+        // Setter untuk mengubah nilai NIM mahasiswa
+        public function setNim($nim) {
+            $this->nim = $nim;   // Mengubah nilai atribut NIM
+        }
+
+        // Setter untuk mengubah nilai jurusan mahasiswa
+        public function setJurusan($jurusan) {
+            $this->jurusan = $jurusan;   // Mengubah nilai atribut jurusan
+        }
+   
+   <p>
+      Metode <b>getter</b> digunakan untuk mengembalikan nilai atau mengambil nilai dari properti nama, nim, dan jurusan masing-masing yang hanya bisa diakses dalam class itu sendiri. Atau dengan kata lain digunakan untuk mengakses data private.
+      Metode <b>setter</b> digunakan untuk mengubah data private. Dalam kondisi ini setter berguna untuk mengubah data private nama, nim, dan jurusan.
+   </p>
+
+   <h6>d. Instansiasi objek </h6>
+
+         $mahasiswa1 = new Mahasiswa("Didik Wicaksono", "240102008", "Komputer dan Bisnis");
+   
+   <p>
+      Membuat objek baru dari class Mahasiswa dengan nama $mahasiswa1. Nilai awal atribut nama, nim, dan jurusan diatur melalui constructor.
+   </p>
+
+   <h6>e. Menampilkan data awal</h6>
+
+         echo "Nama : " . $mahasiswa1->getNama() . "<br>";
+         echo "NIM : " . $mahasiswa1->getNim() . "<br>";
+         echo "Jurusan : " . $mahasiswa1->getJurusan() . "<br>";
+   
+   <p>
+      Baris-baris ini memanggil metode getter untuk menampilkan nilai atribut nama, nim, dan jurusan dari objek $mahasiswa1.
+   </p>
+
+   <h6>f. Menampilkan data setelah perubahan</h6>
+
+         echo "<br>Setelah perubahan:<br>";
+         echo "Nama : " . $mahasiswa1->getNama() . "<br>";
+         echo "NIM : " . $mahasiswa1->getNim() . "<br>";
+         echo "Jurusan : " . $mahasiswa1->getJurusan() . "<br>";
+   
+   <p>
+      Menampilkan data mahasiswa setelah nilai atribut diubah menggunakan metode setter.
+   </p>
+
+<h3>3. Inheritance</h3>
+   <h6>a. Mendefinisikan class Pengguna</h6>
+
+         class Pengguna {
+           protected $nama;
+   
+   <p>
+      Mendefinisikan class Pengguna sebagai superclass atau kelas dasar.
+Kelas ini memiliki atribut protected $nama, artinya atribut ini dapat diakses oleh class Pengguna dan kelas yang mewarisinya (subclass), tetapi tidak dapat diakses dari luar kelas.
+Constructor Pengguna:
+   </p>
+
+   <h6>b. Constructor pengguna</h6>
+
+         public function __construct($nama) {
+            $this->nama = $nama; // Menginisialisasi atribut nama
+        }
+   
+   <p>
+      Constructor ini digunakan untuk menginisialisasi atribut nama ketika objek Pengguna dibuat.
+   </p>
+
+   <h6>c. Metode getName()</h6>
+
+         public function getNama() {
+            return $this->nama; // Mengembalikan nilai atribut nama
+        }
+   
+   <p>
+      Metode ini mengembalikan nilai dari atribut nama.
+   </p>
