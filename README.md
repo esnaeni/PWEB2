@@ -1,10 +1,10 @@
 # PWEB2
-# JOBSHEET 1
+# JOBSHEET 1 (Modul Prfaktikum Pemrograman Web II-Pertemuan 3-4)
 <h3>1. Membuat class dan objek</h3>
    <h6>a. Mendefinisikan class Mahasiswa</h6>
    
       class Mahasiswa {
-      // Atribut
+      // Properti
       public $nama;
       public $nim;
       public $jurusan;
@@ -50,34 +50,34 @@
 
 <h3>Full codenya</h3>
 
-
-   <?php
-       // Membuat class Mahasiswa
-       class Mahasiswa {
-           // Atribut
-           public $nama;
-           public $nim;
-           public $jurusan;
-   
-           // Metode untuk menampilkan data mahasiswa
-           public function tampilkanData() {
-               echo "Nama: " . $this->nama . "<br>";
-               echo "NIM: " . $this->nim . "<br>";
-               echo "Jurusan: " . $this->jurusan . "<br>";
-           }
-       }
-   
-       // Instansiasi objek dari class Mahasiswa
-       $mahasiswa1 = new Mahasiswa();
-   
-       // Mengisi atribut
-       $mahasiswa1->nama = "Budi";
-       $mahasiswa1->nim = "123456";
-       $mahasiswa1->jurusan = "Teknik Informatika";
-   
-       // Tampilkan data mahasiswa
-       echo $mahasiswa1->tampilkanData();
-   ?>
+      
+         <?php
+             // Membuat class Mahasiswa
+             class Mahasiswa {
+                 // Atribut
+                 public $nama;
+                 public $nim;
+                 public $jurusan;
+         
+                 // Metode untuk menampilkan data mahasiswa
+                 public function tampilkanData() {
+                     echo "Nama: " . $this->nama . "<br>";
+                     echo "NIM: " . $this->nim . "<br>";
+                     echo "Jurusan: " . $this->jurusan . "<br>";
+                 }
+             }
+         
+             // Instansiasi objek dari class Mahasiswa
+             $mahasiswa1 = new Mahasiswa();
+         
+             // Mengisi atribut
+             $mahasiswa1->nama = "Budi";
+             $mahasiswa1->nim = "123456";
+             $mahasiswa1->jurusan = "Teknik Informatika";
+         
+             // Tampilkan data mahasiswa
+             echo $mahasiswa1->tampilkanData();
+         ?>
 
 
 
@@ -85,7 +85,7 @@
   <h6>a. Mendefinisikan class Mahasiswa</h6>
   
       class Mahasiswa {
-        // Atribut
+        // Properti
         public $nama;
         public $nim;
         public $jurusan;
@@ -120,11 +120,42 @@
     Metode tampilkanData() mengembalikan string yang mencetak informasi mahasiswa dalam format HTML. Metode ini menggunakan properti $nama, $nim, dan $jurusan yang sudah diinisialisasi oleh constructor. '<br>' digunakan untuk pemisah baris dalam HTML.
   </p>
 
+  <h3>Full codenya</h3>
+
+        <?php
+          // Membuat class Mahasiswa dengan constructor
+          class Mahasiswa {
+              // Atribut
+              public $nama;
+              public $nim;
+              public $jurusan;
+      
+              // Constructor untuk menginisialisasi atribut
+              public function __construct($nama, $nim, $jurusan) {
+                  $this->nama = $nama;
+                  $this->nim = $nim;
+                  $this->jurusan = $jurusan;
+              }
+      
+              // Metode untuk menampilkan data mahasiswa
+              public function tampilkanData() {
+                  return "Nama: $this->nama <br> NIM: $this->nim <br> Jurusan: $this->jurusan";
+              }
+          }
+      
+          // Instansiasi objek dari class Mahasiswa menggunakan constructor
+          $mahasiswa1 = new Mahasiswa("Budi", "123456", "Teknik Informatika");
+      
+          // Tampilkan data mahasiswa
+          echo $mahasiswa1->tampilkanData();
+      ?>
+
+
 <h3>3. Membuat metode tambahan</h3>
   <h6>a. Mendefinisikan class Mahasiswa</h6>
 
     class Mahasiswa {
-    // Atribut
+    // Properti
       public $nama;
       public $nim;
       public $jurusan;
@@ -192,11 +223,50 @@
     Memanggil metode tampilkanData() pada objek $mahasiswa1. Metode ini mengembalikan string yang mencetak informasi tentang mahasiswa setelah perubahan jurusan, dan echo digunakan untuk menampilkannya di browser.
   </p>
 
+  <h3>Full codenya</h3>
+
+      <?php
+          // Membuat class Mahasiswa dengan metode tambahan
+          class Mahasiswa {
+              // Atribut
+              public $nama;
+              public $nim;
+              public $jurusan;
+      
+              // Constructor untuk menginisialisasi atribut
+              public function __construct($nama, $nim, $jurusan) {
+                  $this->nama = $nama;
+                  $this->nim = $nim;
+                  $this->jurusan = $jurusan;
+              }
+      
+              // Metode untuk menampilkan data mahasiswa
+              public function tampilkanData() {
+                  return "Nama: $this->nama <br> NIM: $this->nim <br> Jurusan: $this->jurusan";
+              }
+      
+              // Metode untuk mengubah jurusan
+              public function updateJurusan($jurusanBaru) {
+                  $this->jurusan = $jurusanBaru;
+              }
+          }
+      
+          // Instansiasi objek dari class Mahasiswa
+          $mahasiswa1 = new Mahasiswa("Budi", "123456", "Teknik Informatika");
+      
+          // Ubah jurusan
+          $mahasiswa1->updateJurusan("Sistem Informasi");
+      
+          // Tampilkan data mahasiswa yang sudah diperbarui
+          echo $mahasiswa1->tampilkanData();
+      ?>
+
+  
 <h3>4. Penggunaan atribut dan metode</h3>
   <h6>a. Mendefinisikan class Mahasiswa</h6>
 
     class Mahasiswa {
-    // Atribut
+    // Properti
       public $nama;
       public $nim;
       public $jurusan;
@@ -264,11 +334,55 @@ Ubah NIM: Metode setNim() dipanggil untuk mengubah NIM mahasiswa menjadi "654321
 Tampilkan Data: Metode tampilkanData() dipanggil untuk menampilkan informasi mahasiswa yang telah diperbarui.
   </p>
 
+  <h3>Full codenya</h3>
+
+        <?php
+          // Membuat class Mahasiswa dengan metode setter
+          class Mahasiswa {
+              // Atribut
+              public $nama;
+              public $nim;
+              public $jurusan;
+      
+              // Constructor untuk menginisialisasi atribut
+              public function __construct($nama, $nim, $jurusan) {
+                  $this->nama = $nama;
+                  $this->nim = $nim;
+                  $this->jurusan = $jurusan;
+              }
+      
+              // Metode untuk menampilkan data mahasiswa
+              public function tampilkanData() {
+                  return "Nama: $this->nama <br> NIM: $this->nim <br> Jurusan: $this->jurusan";
+              }
+      
+              // Metode untuk mengubah jurusan
+              public function updateJurusan($jurusanBaru) {
+                  $this->jurusan = $jurusanBaru;
+              }
+      
+              // Metode setter untuk mengubah NIM
+              public function setNim($nimBaru) {
+                  $this->nim = $nimBaru;
+              }
+          }
+      
+          // Instansiasi objek dari class Mahasiswa
+          $mahasiswa1 = new Mahasiswa("Budi", "123456", "Teknik Informatika");
+      
+          // Ubah NIM
+          $mahasiswa1->setNim("654321");
+      
+          // Tampilkan data mahasiswa yang sudah diperbarui
+          echo $mahasiswa1->tampilkanData();
+      ?>
+
+
 <h3>5. Implementasi class Dosen </h3>
    <h6>a. Mendefinisikan class Dosen</h6>
 
          class Dosen {
-         // Atribut
+         // Properti
          public $nama;
          public $nip;
          public $mataKuliah;
@@ -316,5 +430,35 @@ Tampilkan Data: Metode tampilkanData() dipanggil untuk menampilkan informasi mah
 
    <p>
       Memanggil metode tampilkanDosen() pada objek $dosen1. Metode ini mengembalikan string yang mencetak informasi tentang dosen dan menampilkannya menggunakan echo.
-
    </p>
+
+   <h3>Full codenya</h3>
+
+      <?php
+          // Membuat class Dosen
+          class Dosen {
+              // Atribut
+              public $nama;
+              public $nip;
+              public $mataKuliah;
+      
+              // Constructor untuk menginisialisasi atribut
+              public function __construct($nama, $nip, $mataKuliah) {
+                  $this->nama = $nama;
+                  $this->nip = $nip;
+                  $this->mataKuliah = $mataKuliah;
+              }
+      
+              // Metode untuk menampilkan informasi dosen
+              public function tampilkanDosen() {
+                  return "Nama: $this->nama <br> NIM: $this->nip <br> Jurusan: $this->mataKuliah";
+              }
+          }
+      
+          $dosen1 = new Dosen("Dr. Siti", "987654", "Pemrograman Web");
+          echo $dosen1->tampilkanDosen();
+      ?>
+
+# JOBSHEET 2 (Modul Prfaktikum Pemrograman Web II-Pertemuan 1-2)
+<h3>1. Membuat Class dan Object</h3>
+   <h6>a. Mendefinisikan class</h6>
