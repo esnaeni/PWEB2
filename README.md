@@ -857,5 +857,161 @@ public function aksesFitur() { ... }: Implementasi spesifik untuk Mahasiswa, men
 
 # JOBSHEET 3 ((Modul Praktikum Pemrograman Web II-Pertemuan 5-6)
 <h3>1. Inheritance</h3>
-   <h6>a. </h6>
+   <h6>a. Mendefinisikan class Person</h6>
+
+         class Person {
+          // Atribut protected agar bisa diakses oleh kelas turunan
+          protected $name;
+      
+          // Constructor untuk menginisialisasi atribut name
+          public function __construct($name) {
+              $this->name = $name;
+          }
+      
+          // Metode untuk mendapatkan nama
+          public function getName() {
+              return $this->name;
+          }
+      }
+
+   <p>
+      Atribut atau properti $name dideklarasikan sebagai protected yang bererti dapat diakses oleh class itu sendiri dan class-class yang menuruni class Person.
+      Metode __construct($name) digunakan untuk menginisialisasi atribut $name saat objek dari kelas ini dibuat.
+      Metode getName() ini mengembalikan nilai dari atribut $name, yang dapat digunakan untuk mengambil nama orang (person).
+   </p>
+
+   <h6>b. Mendefinisikan class Student</h6>
+
+         class Student extends Person {
+           // Atribut tambahan khusus Student
+           public $studentID;
+   
+           // Constructor untuk menginisialisasi name dan studentID
+           public function __construct($name, $studentID) {
+               // Memanggil constructor dari kelas induk
+               parent::__construct($name);
+               $this->studentID = $studentID;
+           }
+   
+           // Metode untuk mendapatkan studentID
+           public function getStudentID() {
+               return $this->studentID;
+           }
+       }
+   
+   <p>
+      class Student menggunakan kata kunci extends untuk mewarisi semua atribut dan metode dari kelas Person.
+      Atribut $studentID ditambahkan khusus untuk kelas Student dan bersifat public, yang berarti dapat diakses dari luar kelas.
+      Constructor di kelas Student menerima dua parameter, yaitu $name dan $studentID. Dengan memanggil parent::__construct($name), constructor kelas Person dipanggil untuk menginisialisasi atribut $name. Setelah itu, atribut $studentID diinisialisasi.
+      Metode getStudentID() ini digunakan untuk mengembalikan nilai dari atribut $studentID.
+   </p>
+
+   <h6>c. Penggunaan class Student</h6>
+
+         $student = new Student("Yaya", "12689");
+         echo "Name: " . $student->getName() . "<br>";
+         echo "Student ID: " . $student->getStudentID() . "<br>";
+
+   <p>
+      Objek $student dibuat dari kelas Student dengan nama "Yaya" dan student ID "12689". getName() digunakan untuk mendapatkan nama mahasiswa, yang diambil dari kelas Person. getStudentID() digunakan untuk mendapatkan student ID, yang merupakan atribut khusus dari kelas Student.
+   </p>
+
+<h3>2. Polymorphism</h3>
+   <h6>a. Mendefinisikan class Person </h6>
+
+         class Person {
+             protected $name;
+         
+             public function __construct($name) {
+                 $this->name = $name;
+             }
+         
+             public function getName() {
+                 return $this->name;
+             }
+         }
+
+   <p>
+      Atribut $name dideklarasikan sebagai protected, yang berarti bisa diakses oleh kelas Person itu sendiri dan kelas-kelas turunan seperti Student dan Teacher.
+      Metode __construct($name) digunakan untuk menginisialisasi atribut $name saat objek dari kelas Person dibuat.
+      Metode getName() ini mengembalikan nilai dari atribut $name, yang bisa digunakan untuk mendapatkan nama dari objek yang merupakan instance dari kelas Person atau kelas turunannya.
+   </p>
+
+   <h6>b. Mendefinisikan class Student</h6>
+
+         class Student extends Person {
+             public $studentID;
+         
+             public function __construct($name, $studentID) {
+                 parent::__construct($name);
+                 $this->studentID = $studentID;
+             }
+         
+             // Override metode getName untuk memberikan format khusus pada Student
+             public function getName() {
+                 return "Student: " . $this->name;
+             }
+         
+             public function getStudentID() {
+                 return $this->studentID;
+             }
+         }
+
+   <p>
+      class Student mewarisi semua atribut dan metode dari kelas Person. class Student memiliki atribut tambahan $studentID yang khusus untuk objek Student.
+      Constructor di class Student memanggil constructor dari class induk (Person) untuk menginisialisasi atribut $name dan kemudian menginisialisasi atribut $studentID.
+      getName() di-override untuk memberikan format khusus saat mengembalikan nama, yaitu dengan menambahkan prefix "Student: ".
+      Metode getStudentID() ini digunakan untuk mendapatkan studentID dari objek Student.
+   </p>
+
+   <h6>c. Mendefinisikan class Teacher</h6>
+
+         class Teacher extends Person {
+             public $teacherID;
+         
+             public function __construct($name, $teacherID) {
+                 parent::__construct($name);
+                 $this->teacherID = $teacherID;
+             }
+         
+             // Override metode getName untuk memberikan format khusus pada Teacher
+             public function getName() {
+                 return "Teacher: " . $this->name;
+             }
+         
+             public function getTeacherID() {
+                 return $this->teacherID;
+             }
+         }
+
+   <p>
+      class Teacher memiliki atribut tambahan $teacherID yang khusus untuk objek Teacher.
+      Constructor di class Teacher memanggil constructor dari class induk (Person) untuk menginisialisasi atribut $name dan kemudian menginisialisasi atribut $teacherID.
+      Metode getName() di-override untuk memberikan format khusus saat mengembalikan nama, yaitu dengan menambahkan prefix "Teacher: ".
+      Metode getTeacherID() ini digunakan untuk mendapatkan teacherID dari objek Teacher.
+   </p>
+
+   <h6>d. Instgansiasi dan penggunaan</h6>
+
+         $student = new Student("Aya", "123456");
+         $teacher = new Teacher("Bobi", "789012");
+         
+         echo $student->getName() . "<br>";  // Output: Student: Aya
+         echo $teacher->getName() . "<br>";  // Output: Teacher: Bobi
+
+   <p>
+      Objek $student dibuat dari kelas Student dengan nama "Aya" dan studentID "123456".
+      Objek $teacher dibuat dari kelas Teacher dengan nama "Bobi" dan teacherID "789012".
+      getName() pada objek $student mengembalikan "Student: Aya".
+      getName() pada objek $teacher mengembalikan "Teacher: Bobi".
+   </p>
+
+<h3>3. Encapsulation</h3>
+
+
+
+
+
+   
+
    
