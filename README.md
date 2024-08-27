@@ -10,7 +10,7 @@
       public $jurusan;
 
   <p>
-  Kelas Mahasiswa memiliki tiga atribut publik: $nama, $nim, dan $jurusan. Atribut ini digunakan untuk menyimpan data mahasiswa.
+  Kelas Mahasiswa memiliki tiga properti publik: $nama, $nim, dan $jurusan. Atribut ini digunakan untuk menyimpan data mahasiswa.
   </p> 
   <h6>b. Metode tampilkanData()</h6>
       
@@ -20,14 +20,14 @@
         echo "Jurusan: " . $this->jurusan . "<br>";
         }
   <p>
-    Metode ini digunakan untuk menampilkan informasi tentang mahasiswa. Metode ini mengakses atribut dari objek yang memanggilnya dan mencetak nilai-nilai tersebut. <br> digunakan untuk pemisah baris dalam output HTML.
+    Metode ini digunakan untuk menampilkan informasi tentang mahasiswa. Metode ini mengakses properti dari objek yang memanggilnya dan mencetak nilai-nilai tersebut. <br> digunakan untuk pemisah baris dalam output HTML.
   </p>
 
   <h6>c. Instansiasi objek Mahasiswa()</h6>
 
         $mahasiswa1 = new Mahasiswa();
   <p>
-    Instansiasi adalah membuat sebuah objek dari kelas Mahasiswa dengan nama $mahasiswa1. Pada tahap ini, objek tersebut baru saja dibuat dan atribut-atributnya belum diinisialisasi.
+    Instansiasi adalah membuat sebuah objek dari kelas Mahasiswa dengan nama $mahasiswa1. Pada tahap ini, objek tersebut baru saja dibuat dan properti-propertinya belum diinisialisasi.
   </p>
 
   <h6>d. Mengisi Atribut</h6>
@@ -37,7 +37,7 @@
         $mahasiswa1->jurusan = "Teknik Informatika";
 
   <p>
-    Atribut objek $mahasiswa1 diisi dengan nilai-nilai tertentu: nama diatur menjadi "Budi", nim diatur menjadi "123456", dan jurusan diatur menjadi "Teknik Informatika".
+    Properti objek $mahasiswa1 diisi dengan nilai-nilai tertentu: nama diatur menjadi "Budi", nim diatur menjadi "123456", dan jurusan diatur menjadi "Teknik Informatika".
   </p>
 
  <h6>e. Menampilkan data Mahasiswa</h6> 
@@ -47,6 +47,37 @@
 <p>
   Metode tampilkanData() dipanggil pada objek $mahasiswa1. Metode ini mencetak informasi tentang mahasiswa yang telah diisi sebelumnya.
 </p>
+
+<h3>Full codenya</h3>
+<?php
+    // Membuat class Mahasiswa
+    class Mahasiswa {
+        // Atribut
+        public $nama;
+        public $nim;
+        public $jurusan;
+
+        // Metode untuk menampilkan data mahasiswa
+        public function tampilkanData() {
+            echo "Nama: " . $this->nama . "<br>";
+            echo "NIM: " . $this->nim . "<br>";
+            echo "Jurusan: " . $this->jurusan . "<br>";
+        }
+    }
+
+    // Instansiasi objek dari class Mahasiswa
+    $mahasiswa1 = new Mahasiswa();
+
+    // Mengisi atribut
+    $mahasiswa1->nama = "Budi";
+    $mahasiswa1->nim = "123456";
+    $mahasiswa1->jurusan = "Teknik Informatika";
+
+    // Tampilkan data mahasiswa
+    echo $mahasiswa1->tampilkanData();
+?>
+
+
 
 <h3>2. Implementasi Construct</h3>
   <h6>a. Mendefinisikan class Mahasiswa</h6>
@@ -59,10 +90,10 @@
       }
 
   <p>
-    Atribut: Kelas Mahasiswa memiliki tiga atribut publik:
-$nama: Untuk menyimpan nama mahasiswa.
-$nim: Untuk menyimpan Nomor Induk Mahasiswa.
-$jurusan: Untuk menyimpan jurusan mahasiswa.
+   Kelas Mahasiswa memiliki tiga properti publik:
+   $nama: Untuk menyimpan nama mahasiswa.
+   $nim: Untuk menyimpan Nomor Induk Mahasiswa.
+   $jurusan: Untuk menyimpan jurusan mahasiswa.
   </p>
 
   <h6>b. Constructor dari __construct()</h6>
@@ -74,7 +105,7 @@ $jurusan: Untuk menyimpan jurusan mahasiswa.
     }
 
   <p>
-    Metode khusus ini dipanggil secara otomatis saat objek dari kelas Mahasiswa dibuat. Constructor ini menerima tiga parameter ($nama, $nim, $jurusan) dan menginisialisasi atribut kelas dengan nilai-nilai yang diberikan saat objek dibuat. Ini mengurangi kebutuhan untuk mengatur nilai atribut secara terpisah setelah objek dibuat.
+    Metode khusus ini dipanggil secara otomatis saat objek dari kelas Mahasiswa dibuat. Constructor ini menerima tiga parameter ($nama, $nim, $jurusan) dan menginisialisasi properti kelas dengan nilai-nilai yang diberikan saat objek dibuat. Ini mengurangi kebutuhan untuk mengatur nilai properti secara terpisah setelah objek dibuat.
   </p>
 
   <h6>c. Metode tampilkanData()</h6>
@@ -84,7 +115,7 @@ $jurusan: Untuk menyimpan jurusan mahasiswa.
     }
 
   <p>
-    Metode tampilkanData() mengembalikan string yang mencetak informasi mahasiswa dalam format HTML. Metode ini menggunakan atribut $nama, $nim, dan $jurusan yang sudah diinisialisasi oleh constructor. <br> digunakan untuk pemisah baris dalam HTML.
+    Metode tampilkanData() mengembalikan string yang mencetak informasi mahasiswa dalam format HTML. Metode ini menggunakan properti $nama, $nim, dan $jurusan yang sudah diinisialisasi oleh constructor. '<br>' digunakan untuk pemisah baris dalam HTML.
   </p>
 
 <h3>3. Membuat metode tambahan</h3>
@@ -97,7 +128,7 @@ $jurusan: Untuk menyimpan jurusan mahasiswa.
       public $jurusan;
 
   <p>
-    Atribut: Kelas Mahasiswa memiliki tiga atribut publik:
+    Kelas Mahasiswa memiliki tiga properti publik:
     $nama: Untuk menyimpan nama mahasiswa.
     $nim: Untuk menyimpan Nomor Induk Mahasiswa (NIM).
     $jurusan: Untuk menyimpan jurusan mahasiswa.
@@ -112,7 +143,7 @@ $jurusan: Untuk menyimpan jurusan mahasiswa.
     }
 
   <p>
-        Metode ini dipanggil secara otomatis saat objek dari kelas Mahasiswa dibuat. Constructor ini menerima tiga parameter ($nama, $nim, $jurusan) dan menginisialisasi atribut kelas dengan nilai-nilai tersebut. Ini memungkinkan Anda untuk membuat objek Mahasiswa dengan data awal yang lengkap.
+        Metode ini dipanggil secara otomatis saat objek dari kelas Mahasiswa dibuat. Constructor ini menerima tiga parameter ($nama, $nim, $jurusan) dan menginisialisasi properti kelas dengan nilai-nilai tersebut. Ini memungkinkan untuk membuat objek Mahasiswa dengan data awal yang lengkap.
   </p>
 
   <h6>c. Metode tampilkanData()</h6>
@@ -122,7 +153,7 @@ $jurusan: Untuk menyimpan jurusan mahasiswa.
       }
 
   <p>
-        Metode ini mengembalikan string yang mencetak informasi tentang mahasiswa. String yang dikembalikan menggunakan atribut $nama, $nim, dan $jurusan. <br> digunakan untuk pemisah baris dalam HTML agar informasi yang ditampilkan berada pada baris yang berbeda.
+        Metode ini mengembalikan string yang mencetak informasi tentang mahasiswa. String yang dikembalikan menggunakan properti $nama, $nim, dan $jurusan. <br> digunakan untuk pemisah baris dalam HTML agar informasi yang ditampilkan berada pada baris yang berbeda.
   </p>
 
   <h6>d. Metode updateJurusan()</h6>
@@ -132,7 +163,7 @@ $jurusan: Untuk menyimpan jurusan mahasiswa.
         }
 
   <p>
-    Metode ini menerima satu parameter ($jurusanBaru) dan mengubah nilai atribut $jurusan dengan nilai parameter tersebut. Ini memungkinkan Anda untuk memperbarui jurusan mahasiswa setelah objek dibuat.
+    Metode ini menerima satu parameter ($jurusanBaru) dan mengubah nilai properti $jurusan dengan nilai parameter tersebut. Ini memungkinkan untuk memperbarui jurusan mahasiswa setelah objek dibuat.
   </p>
 
   <h6>e. Instansiasi objek dari class Mahasiswa</h6>
@@ -140,7 +171,7 @@ $jurusan: Untuk menyimpan jurusan mahasiswa.
         $mahasiswa1 = new Mahasiswa("Budi", "123456", "Teknik Informatika");
 
   <p>
-    Membuat objek baru dari kelas Mahasiswa dengan nama $mahasiswa1. Pada saat instansiasi, constructor dipanggil dengan argumen "Budi", "123456", dan "Teknik Informatika", yang akan mengisi atribut objek dengan nilai-nilai tersebut.
+    Membuat objek baru dari kelas Mahasiswa dengan nama $mahasiswa1. Pada saat instansiasi, constructor dipanggil dengan argumen "Budi", "123456", dan "Teknik Informatika", yang akan mengisi properti objek dengan nilai-nilai tersebut.
   </p>
 
   <h6>f. Mengubah Jurusan</h6>
@@ -148,10 +179,10 @@ $jurusan: Untuk menyimpan jurusan mahasiswa.
         $mahasiswa1->updateJurusan("Sistem Informasi");
 
   <p>
-    Memanggil metode updateJurusan() pada objek $mahasiswa1 dengan argumen "Sistem Informasi". Ini mengubah nilai atribut $jurusan dari "Teknik Informatika" menjadi "Sistem Informasi".
+    Memanggil metode updateJurusan() pada objek $mahasiswa1 dengan argumen "Sistem Informasi". Ini mengubah nilai properti $jurusan dari "Teknik Informatika" menjadi "Sistem Informasi".
   </p>
 
-  <h6>g. Menampilkan data AMahasiswa yang sudah diperbarui</h6>
+  <h6>g. Menampilkan data Mahasiswa yang sudah diperbarui</h6>
 
         echo $mahasiswa1->tampilkanData();
 
@@ -169,7 +200,7 @@ $jurusan: Untuk menyimpan jurusan mahasiswa.
       public $jurusan;
 
   <p>
-    Kelas Mahasiswa memiliki tiga atribut publik: $nama, $nim, dan $jurusan. Atribut ini digunakan untuk menyimpan data mahasiswa.
+    Kelas Mahasiswa memiliki tiga properti publik: $nama, $nim, dan $jurusan. Properti ini digunakan untuk menyimpan data mahasiswa.
   </p>
 
   <h6>b. Constructor menggunakan __construct</h6>
@@ -181,7 +212,7 @@ $jurusan: Untuk menyimpan jurusan mahasiswa.
     }
 
   <p>
-    Metode ini dipanggil saat objek Mahasiswa diinstansiasi. Ini digunakan untuk menginisialisasi atribut kelas dengan nilai yang diberikan saat objek dibuat.
+    Metode ini dipanggil saat objek Mahasiswa diinstansiasi. Ini digunakan untuk menginisialisasi properti kelas dengan nilai yang diberikan saat objek dibuat.
   </p>
 
   <h6>c. Metode tampilkanData()</h6>
@@ -191,7 +222,7 @@ $jurusan: Untuk menyimpan jurusan mahasiswa.
     }
 
   <p>
-    Metode ini mengembalikan string yang menampilkan informasi tentang nama, NIM, dan jurusan mahasiswa. <br> digunakan untuk pemisah baris dalam HTML.
+    Metode ini mengembalikan string yang menampilkan informasi tentang nama, NIM, dan jurusan mahasiswa. ''<br>' digunakan untuk pemisah baris dalam HTML.
   </p>
 
   <h6>d. Metode updateJurusan()</h6>
@@ -201,7 +232,7 @@ $jurusan: Untuk menyimpan jurusan mahasiswa.
     }
 
   <p>
-    Metode ini memungkinkan untuk memperbarui nilai atribut $jurusan. Ini menggantikan jurusan yang ada dengan jurusan baru yang diberikan sebagai parameter.
+    Metode ini memungkinkan untuk memperbarui nilai properti $jurusan. Ini menggantikan jurusan yang ada dengan jurusan baru yang diberikan sebagai parameter.
   </p>
 
   <h6>e. Metode setter setNim()</h6>
@@ -211,7 +242,7 @@ $jurusan: Untuk menyimpan jurusan mahasiswa.
         }
 
   <p>
-    Metode ini digunakan untuk mengubah nilai atribut $nim. Ini memungkinkan Anda untuk menetapkan NIM baru untuk objek Mahasiswa.
+    Metode ini digunakan untuk mengubah nilai properti $nim. Ini memungkinkan untuk menetapkan NIM baru untuk objek Mahasiswa.
   </p>
 
   <h6>f. Instansiasi objek dan penggunaan metode</h6>
