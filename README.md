@@ -1,5 +1,5 @@
 # PWEB2
-# JOBSHEET 1 (Modul Prfaktikum Pemrograman Web II-Pertemuan 3-4)
+# JOBSHEET 1 (Modul Prfaktikum Pemrograman Web II-Pertemuan 1-2)
 <h3>1. Membuat class dan objek</h3>
    <h6>a. Mendefinisikan class Mahasiswa</h6>
    
@@ -54,7 +54,7 @@
          <?php
              // Membuat class Mahasiswa
              class Mahasiswa {
-                 // Atribut
+                 // Properti
                  public $nama;
                  public $nim;
                  public $jurusan;
@@ -70,7 +70,7 @@
              // Instansiasi objek dari class Mahasiswa
              $mahasiswa1 = new Mahasiswa();
          
-             // Mengisi atribut
+             // Mengisi pro
              $mahasiswa1->nama = "Budi";
              $mahasiswa1->nim = "123456";
              $mahasiswa1->jurusan = "Teknik Informatika";
