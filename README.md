@@ -459,7 +459,7 @@ Tampilkan Data: Metode tampilkanData() dipanggil untuk menampilkan informasi mah
           echo $dosen1->tampilkanDosen();
       ?>
 
-# JOBSHEET 2 (Modul Prfaktikum Pemrograman Web II-Pertemuan 3-4)
+# JOBSHEET 2 (Modul Praktikum Pemrograman Web II-Pertemuan 3-4)
 <h3>1. Membuat Class dan Object</h3>
    <h6>a. Mendefinisikan class</h6>
 
@@ -641,3 +641,221 @@ Constructor Pengguna:
    <p>
       Metode ini mengembalikan nilai dari atribut nama.
    </p>
+
+   <h6>d. Mendefinisikan class Dosen</h6>
+
+         class Dosen extends Pengguna {
+           private $mataKuliah;
+   
+   <p>
+      Mendefinisikan class Dosen yang mewarisi dari class Pengguna.
+Dosen adalah subclass dari Pengguna dan menambahkan fungsionalitas tambahan. Properti mataKuliah bersifat private, artinya hanya bisa diakses dari dalam class Dosen.
+   </p>
+
+   <h6>e. Cunstructor menggunakan __construct</h6>
+
+         public function __construct($nama, $mataKuliah) {
+            // Memanggil constructor dari superclass Pengguna
+            parent::__construct($nama);
+            $this->mataKuliah = $mataKuliah; // Menginisialisasi atribut mataKuliah
+        }
+   
+   <p>
+      Constructor ini memanggil constructor dari superclass Pengguna menggunakan parent::__construct($nama); untuk menginisialisasi atribut nama, dan kemudian menginisialisasi atribut mataKuliah.
+   </p>
+
+   <h6>f. Metode getMataKuliah()</h6>
+
+         public function getMataKuliah() {
+            return $this->mataKuliah; // Mengembalikan nilai atribut mataKuliah
+        }
+   
+   <p>
+      Metode ini mengembalikan nilai dari atribut mataKuliah.
+   </p>
+
+   <h6>g. Instansiasi objek class Dosen</h6>
+
+         $dosen1 = new Dosen("Didik Wicaksono", "Desain Komunikasi Visual");
+   
+   <p>
+      Membuat objek baru dari class Dosen dengan nama Didik Wicaksono dan mata kuliah Desain Komunikasi Visual.
+   </p>
+
+   <h6>h. Menampilkan data Dosen</h6>
+
+         echo "Nama: " . $dosen1->getNama() . "<br>"; // Menampilkan nama dosen
+         echo "Mata Kuliah: " . $dosen1->getMataKuliah() . "<br>"; // Menampilkan mata kuliah yang diajarkan
+   
+   <p>
+      Menampilkan nama dan mata kuliah dosen menggunakan metode getNama() dari superclass Pengguna dan metode getMataKuliah() dari class Dosen.
+   </p>
+
+<h3>4. Polymorphism</h3>
+   <h6>a. Interface Pengguna</h6>
+
+         interface Pengguna {
+           public function aksesFitur();
+         }
+   
+   <p>
+      Interface ini mendefinisikan kontrak yang harus diikuti oleh kelas yang mengimplementasikannya. public function aksesFitur(); ini harus diimplementasikan oleh semua kelas yang mengimplementasikan interface Pengguna.
+   </p>
+
+   <h6>b. Mendefinisikan class Mahasiswa</h6>
+
+         class Mahasiswa implements Pengguna {
+           private $nama;
+           private $jurusan;
+
+           public function __construct($nama, $jurusan) {
+               $this->nama = $nama;
+               $this->jurusan = $jurusan;
+           }
+   
+           // Implementasi metode aksesFitur() untuk Mahasiswa
+           public function aksesFitur() {
+               return "Mahasiswa $this->nama dari jurusan $this->jurusan dapat mengakses materi kuliah dan tugas.";
+           }
+       }
+
+   
+   <p>
+      class Mahasiswa implements Pengguna { ... }. Pada class ini mengimplementasikan interface Pengguna dan harus menyediakan implementasi untuk metode aksesFitur().
+public function aksesFitur() { ... }: Implementasi spesifik untuk Mahasiswa, menjelaskan fitur-fitur yang dapat diakses oleh mahasiswa.
+   </p>
+
+   <h6>c. Mendefinisikan class Dosen</h6>
+
+         class Dosen implements Pengguna {
+           private $nama;
+           private $mataKuliah;
+   
+           public function __construct($nama, $mataKuliah) {
+               $this->nama = $nama;
+               $this->mataKuliah = $mataKuliah;
+           }
+   
+           // Implementasi metode aksesFitur() untuk Dosen
+           public function aksesFitur() {
+               return "Dosen $this->nama yang mengajar mata kuliah $this->mataKuliah dapat mengakses data mahasiswa dan jadwal mengajar.";
+           }
+       }
+   
+   <p>
+      class Dosen implements Pengguna { ... } ini juga mengimplementasikan interface Pengguna dan harus menyediakan implementasi untuk metode aksesFitur(). public function aksesFitur() { ... } implementasi spesifik untuk Dosen, menjelaskan fitur-fitur yang dapat diakses oleh dosen.
+   </p>
+
+   <h6>d. Instansiasi dan penggunaan</h6>
+
+         $mahasiswa1 = new Mahasiswa("Didik Wicaksono", "Teknik Informatika");
+
+   <p>
+      Membuat objek Mahasiswa.
+   </p>
+
+         $dosen1 = new Dosen("Budi Santoso", "Desain Grafis");
+
+   <p>
+      Membuat objek Dosen.
+   </p>
+
+         echo $mahasiswa1->aksesFitur() . "<br>";
+
+   <p>
+      Menampilkan hasil dari aksesFitur() untuk objek Mahasiswa.
+   </p>
+
+         echo $dosen1->aksesFitur();
+
+   <p>
+      Menampilkan hasil dari aksesFitur() untuk objek Dosen.
+   </p>
+
+<h3>5. Abstraction</h3>
+   <h6>a. class abstract Pengguna</h6>
+
+         abstract class Pengguna {
+           protected $nama; // Atribut protected agar dapat diakses oleh kelas turunan
+   
+           // Constructor untuk menginisialisasi nama
+           public function __construct($nama) {
+               $this->nama = $nama;
+           }
+   
+           // Metode abstrak yang harus diimplementasikan oleh kelas turunannya
+           abstract public function aksesFitur();
+       }
+   
+   <p>
+      abstract class Pengguna { ... } adalah kelas abstrak yang tidak dapat diinstansiasi langsung. Kelas ini mendefinisikan atribut nama dan metode abstrak aksesFitur(). abstract public function aksesFitur();, metode abstrak ini tidak memiliki implementasi di kelas abstrak dan harus diimplementasikan oleh setiap kelas yang mewarisinya.
+   </p>
+
+   <h6>b. Mendefinisikan class Mahasiswa</h6>
+
+         class Mahasiswa extends Pengguna {
+           private $jurusan;
+   
+           // Constructor untuk menginisialisasi nama dan jurusan
+           public function __construct($nama, $jurusan) {
+               parent::__construct($nama); // Memanggil constructor dari class abstrak Pengguna
+               $this->jurusan = $jurusan;
+           }
+   
+           // Implementasi metode aksesFitur() untuk Mahasiswa
+           public function aksesFitur() {
+               return "Mahasiswa $this->nama dari jurusan $this->jurusan dapat mengakses materi kuliah dan tugas.";
+           }
+       }
+   
+   <p>
+      class Mahasiswa extends Pengguna { ... }: ini mewarisi dari kelas abstrak Pengguna dan harus mengimplementasikan metode aksesFitur(). public function aksesFitur() { ... } mengimplementasi spesifik untuk Mahasiswa, memberikan detail tentang fitur yang dapat diakses oleh mahasiswa.
+   </p>
+
+   <h6>c. Mendefinisikan class Dosen</h6>
+
+         class Dosen extends Pengguna {
+           private $mataKuliah;
+   
+           // Constructor untuk menginisialisasi nama dan mata kuliah
+           public function __construct($nama, $mataKuliah) {
+               parent::__construct($nama); // Memanggil constructor dari class abstrak Pengguna
+               $this->mataKuliah = $mataKuliah;
+           }
+   
+           // Implementasi metode aksesFitur() untuk Dosen
+           public function aksesFitur() {
+               return "Dosen $this->nama yang mengajar mata kuliah $this->mataKuliah dapat mengakses data mahasiswa dan jadwal mengajar.";
+           }
+       }
+   
+   <p>
+      class Dosen extends Pengguna { ... } ini juga mewarisi dari kelas abstrak Pengguna dan harus mengimplementasikan metode aksesFitur(). public function aksesFitur() { ... } implementasi spesifik untuk Dosen, memberikan detail tentang fitur yang dapat diakses oleh dosen.
+   </p>
+
+   <h6>d. Instansiasi dan penggunaan</h6>
+
+         $mahasiswa1 = new Mahasiswa("Didik Wicaksono", "Teknik Informatika");
+   
+   <p>
+      Membuat objek Mahasiswa.
+   </p>
+
+         $dosen1 = new Dosen("Budi Santoso", "Desain Grafis");
+
+   <p>
+      Membuat objek Dosen.
+   </p>
+
+         echo $mahasiswa1->aksesFitur() . "<br>";
+
+   <p>Menampilkan hasil dari aksesFitur() untuk objek Mahasiswa.</p>
+
+         echo $dosen1->aksesFitur();
+
+   <p>Menampilkan hasil dari aksesFitur() untuk objek Dosen.</p>
+
+# JOBSHEET 3 ((Modul Praktikum Pemrograman Web II-Pertemuan 5-6)
+<h3>1. Inheritance</h3>
+   <h6>a. </h6>
+   
