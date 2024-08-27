@@ -49,33 +49,35 @@
 </p>
 
 <h3>Full codenya</h3>
-<?php
-    // Membuat class Mahasiswa
-    class Mahasiswa {
-        // Atribut
-        public $nama;
-        public $nim;
-        public $jurusan;
 
-        // Metode untuk menampilkan data mahasiswa
-        public function tampilkanData() {
-            echo "Nama: " . $this->nama . "<br>";
-            echo "NIM: " . $this->nim . "<br>";
-            echo "Jurusan: " . $this->jurusan . "<br>";
-        }
-    }
 
-    // Instansiasi objek dari class Mahasiswa
-    $mahasiswa1 = new Mahasiswa();
-
-    // Mengisi atribut
-    $mahasiswa1->nama = "Budi";
-    $mahasiswa1->nim = "123456";
-    $mahasiswa1->jurusan = "Teknik Informatika";
-
-    // Tampilkan data mahasiswa
-    echo $mahasiswa1->tampilkanData();
-?>
+   <?php
+       // Membuat class Mahasiswa
+       class Mahasiswa {
+           // Atribut
+           public $nama;
+           public $nim;
+           public $jurusan;
+   
+           // Metode untuk menampilkan data mahasiswa
+           public function tampilkanData() {
+               echo "Nama: " . $this->nama . "<br>";
+               echo "NIM: " . $this->nim . "<br>";
+               echo "Jurusan: " . $this->jurusan . "<br>";
+           }
+       }
+   
+       // Instansiasi objek dari class Mahasiswa
+       $mahasiswa1 = new Mahasiswa();
+   
+       // Mengisi atribut
+       $mahasiswa1->nama = "Budi";
+       $mahasiswa1->nim = "123456";
+       $mahasiswa1->jurusan = "Teknik Informatika";
+   
+       // Tampilkan data mahasiswa
+       echo $mahasiswa1->tampilkanData();
+   ?>
 
 
 
@@ -262,4 +264,57 @@ Ubah NIM: Metode setNim() dipanggil untuk mengubah NIM mahasiswa menjadi "654321
 Tampilkan Data: Metode tampilkanData() dipanggil untuk menampilkan informasi mahasiswa yang telah diperbarui.
   </p>
 
-        
+<h3>5. Implementasi class Dosen </h3>
+   <h6>a. Mendefinisikan class Dosen</h6>
+
+         class Dosen {
+         // Atribut
+         public $nama;
+         public $nip;
+         public $mataKuliah;
+
+   <p>
+      Kelas Dosen memiliki tiga atribut publik:
+      $nama: Untuk menyimpan nama dosen.
+      $nip: Untuk menyimpan Nomor Induk Pegawai dosen.
+      $mataKuliah: Untuk menyimpan nama mata kuliah yang diajarkan oleh dosen.
+   </p>
+
+   <h6>b. Constructor menggunakan __construct()</h6>
+
+      public function __construct($nama, $nip, $mataKuliah) {
+         $this->nama = $nama;
+         $this->nip = $nip;
+         $this->mataKuliah = $mataKuliah;
+      }
+
+   <p>
+      Metode ini dipanggil secara otomatis saat objek dari kelas Dosen dibuat. Constructor ini menerima tiga parameter ($nama, $nip, $mataKuliah) dan menginisialisasi atribut kelas dengan nilai-nilai tersebut. Ini memungkinkan Anda untuk membuat objek Dosen dengan data awal yang lengkap.
+   </p>
+
+   <h6>c. Metode tampilkanDosen()</h6>
+
+         public function tampilkanDosen() {
+            return "Nama: $this->nama <br> NIM: $this->nip <br> Jurusan: $this->mataKuliah";
+         }
+
+   <p>
+      Metode ini mengembalikan string yang mencetak informasi tentang dosen. String yang dikembalikan menggunakan atribut $nama, $nip, dan $mataKuliah. <br> digunakan untuk pemisah baris dalam HTML agar informasi yang ditampilkan berada pada baris yang berbeda.
+   </p>
+
+   <h6>d. Instansiasi objek Dosen</h6>
+
+         $dosen1 = new Dosen("Dr. Siti", "987654", "Pemrograman Web");
+
+   <p>
+      Membuat objek baru dari kelas Dosen dengan nama $dosen1. Pada saat instansiasi, constructor dipanggil dengan argumen "Dr. Siti", "987654", dan "Pemrograman Web", yang akan mengisi atribut objek dengan nilai-nilai tersebut.
+   </p>
+
+   <h6>e. Menampilkan data Dosen</h6>
+
+         echo $dosen1->tampilkanDosen();
+
+   <p>
+      Memanggil metode tampilkanDosen() pada objek $dosen1. Metode ini mengembalikan string yang mencetak informasi tentang dosen dan menampilkannya menggunakan echo.
+
+   </p>
