@@ -43,7 +43,6 @@
         }
     }
 
-    // Contoh penggunaan
     $student = new Student("Alya", "123456");
 
     // Mengakses data melalui metode getter
