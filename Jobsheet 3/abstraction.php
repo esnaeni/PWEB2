@@ -39,7 +39,6 @@
         }
     }
 
-    // Contoh penggunaan
     $onlineCourse = new OnlineCourse("PHP Programming", "Akademi");
     $offlineCourse = new OfflineCourse("Java Programming", "Kampus A");
 
