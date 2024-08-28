@@ -1,5 +1,6 @@
 # PWEB2
-# JOBSHEET 1 (Modul Prfaktikum Pemrograman Web II-Pertemuan 1-2)
+# JOBSHEET 1 (Modul Praktikum Pemrograman Web II-Pertemuan 1-2)
+Pada jobsheet 1 ini kita menerapkan konsep class dan objek dalam PHP.
 <h3>1. Membuat class dan objek</h3>
    <h6>a. Mendefinisikan class Mahasiswa</h6>
    
@@ -20,7 +21,7 @@
         echo "Jurusan: " . $this->jurusan . "<br>";
         }
   <p>
-    Metode ini digunakan untuk menampilkan informasi tentang mahasiswa. Metode ini mengakses properti dari objek yang memanggilnya dan mencetak nilai-nilai tersebut. <br> digunakan untuk pemisah baris dalam output HTML.
+    Metode ini digunakan untuk menampilkan informasi tentang mahasiswa. Metode ini mengakses properti dari objek yang memanggilnya dan mencetak nilai-nilai tersebut. '<br>' digunakan untuk pemisah baris dalam output HTML.
   </p>
 
   <h6>c. Instansiasi objek Mahasiswa()</h6>
@@ -37,7 +38,7 @@
         $mahasiswa1->jurusan = "Teknik Informatika";
 
   <p>
-    Properti objek $mahasiswa1 diisi dengan nilai-nilai tertentu: nama diatur menjadi "Budi", nim diatur menjadi "123456", dan jurusan diatur menjadi "Teknik Informatika".
+    Properti objek $mahasiswa1 diisi dengan nilai-nilai tertentu, nama diatur menjadi "Budi", nim diatur menjadi "123456", dan jurusan diatur menjadi "Teknik Informatika".
   </p>
 
  <h6>e. Menampilkan data Mahasiswa</h6> 
@@ -70,7 +71,7 @@
              // Instansiasi objek dari class Mahasiswa
              $mahasiswa1 = new Mahasiswa();
          
-             // Mengisi pro
+             // Mengisi properti
              $mahasiswa1->nama = "Budi";
              $mahasiswa1->nim = "123456";
              $mahasiswa1->jurusan = "Teknik Informatika";
@@ -78,6 +79,9 @@
              // Tampilkan data mahasiswa
              echo $mahasiswa1->tampilkanData();
          ?>
+
+<h3>Output yang dihasilkan</h3>
+<img src="https://github.com/user-attachments/assets/c1fe1644-e84f-4f59-9de8-6c5a1be73d37" >
 
 
 
@@ -149,7 +153,8 @@
           // Tampilkan data mahasiswa
           echo $mahasiswa1->tampilkanData();
       ?>
-
+<h3>Output yang dihasilkan</h3>
+<img src="https://github.com/user-attachments/assets/2f29ea65-e162-4699-8dd8-251e562b5ac6">
 
 <h3>3. Membuat metode tambahan</h3>
   <h6>a. Mendefinisikan class Mahasiswa</h6>
