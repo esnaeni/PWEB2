@@ -33,7 +33,6 @@
         }
     }
 
-    // Contoh penggunaan
     $student = new Student("Yaya", "12689");
     echo "Name: " . $student->getName() . "<br>";
     echo "Student ID: " . $student->getStudentID() . "<br>";
