@@ -49,7 +49,6 @@
         }
     }
 
-    // Contoh penggunaan
     $student = new Student("Aya", "123456");
     $teacher = new Teacher("Bobi", "789012");
 
