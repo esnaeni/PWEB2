@@ -88,7 +88,6 @@
         }
     }
 
-    // Contoh Penggunaan
     $dosen = new Dosen("Dr. Bandi", "123456789");
     $mahasiswa = new Mahasiswa("Andi", "987654321");
 
